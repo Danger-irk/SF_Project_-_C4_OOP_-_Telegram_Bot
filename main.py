@@ -56,8 +56,7 @@ def amount_handler(message: telebot.types.Message, base, symbol):
     except APIException as e:
         bot.send_message(message.chat.id, f"Ошбка конвертации: \n{e}")
     else:
-        text = f"Цена {amount} {exchanges.get(base)} в {exchanges.get(symbol)} : {new_price}\n" \
-               f"/convert \t /rate \t /help"
+        text = f"Цена {amount} {exchanges.get(base)} в {exchanges.get(symbol)} : {new_price}\n"
         bot.send_message(message.chat.id, text)
 
 
@@ -75,8 +74,7 @@ def rate_handler(message: telebot.types.Message):
     except APIException as e:
         bot.send_message(message.chat.id, f"Ошбка: \n{e}")
     else:
-        text = f"Курс {exchanges.get(name_rate)} составляет - {new_rate} рублей.\n" \
-               f"/rate \t /convert \t /help"
+        text = f"Курс {exchanges.get(name_rate)} составляет - {new_rate} рублей.\n"
         bot.send_message(message.chat.id, text)
 
 
